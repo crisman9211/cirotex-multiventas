@@ -5,30 +5,30 @@ export const standard = defineScenario<Prisma.ProductItemCreateArgs>({
   productItem: {
     one: {
       data: {
-        updatedAt: '2023-01-22T08:37:33.010Z',
+        updatedAt: '2023-01-22T08:50:57.137Z',
         Product: {
           create: {
             name: 'String',
             description: 'String',
             imgURL: 'String',
-            price: 4674380.749431148,
+            price: 6703511.403520164,
             isAvailable: true,
-            updatedAt: '2023-01-22T08:37:33.010Z',
+            updatedAt: '2023-01-22T08:50:57.137Z',
           },
         },
       },
     },
     two: {
       data: {
-        updatedAt: '2023-01-22T08:37:33.010Z',
+        updatedAt: '2023-01-22T08:50:57.137Z',
         Product: {
           create: {
             name: 'String',
             description: 'String',
             imgURL: 'String',
-            price: 6148559.384469334,
+            price: 3641531.850342388,
             isAvailable: true,
-            updatedAt: '2023-01-22T08:37:33.010Z',
+            updatedAt: '2023-01-22T08:50:57.137Z',
           },
         },
       },

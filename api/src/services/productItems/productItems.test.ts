@@ -35,12 +35,12 @@ describe('productItems', () => {
     const result = await createProductItem({
       input: {
         productId: scenario.productItem.two.productId,
-        updatedAt: '2023-01-22T08:37:32.999Z',
+        updatedAt: '2023-01-22T08:50:57.121Z',
       },
     })
 
     expect(result.productId).toEqual(scenario.productItem.two.productId)
-    expect(result.updatedAt).toEqual(new Date('2023-01-22T08:37:32.999Z'))
+    expect(result.updatedAt).toEqual(new Date('2023-01-22T08:50:57.121Z'))
   })
 
   scenario('updates a productItem', async (scenario: StandardScenario) => {
@@ -49,10 +49,10 @@ describe('productItems', () => {
     })) as ProductItem
     const result = await updateProductItem({
       id: original.id,
-      input: { updatedAt: '2023-01-23T08:37:32.999Z' },
+      input: { updatedAt: '2023-01-23T08:50:57.121Z' },
     })
 
-    expect(result.updatedAt).toEqual(new Date('2023-01-23T08:37:32.999Z'))
+    expect(result.updatedAt).toEqual(new Date('2023-01-23T08:50:57.121Z'))
   })
 
   scenario('deletes a productItem', async (scenario: StandardScenario) => {
