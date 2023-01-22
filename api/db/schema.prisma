@@ -15,8 +15,8 @@ model User {
   name        String
   phoneNumber String?
   address     String?
-  userClient  UserClient?
-  userAdmin   UserAdmin?
+  UserClient  UserClient?
+  UserAdmin   UserAdmin?
 }
 
 model UserClient {
@@ -24,8 +24,8 @@ model UserClient {
   phoneNumber  String?
   user         User          @relation(fields: [userId], references: [id])
   userId       String        @unique @db.ObjectId
-  shoppingCart shoppingCart?
-  order        Order[]
+  ShoppingCart shoppingCart?
+  Order        Order[]
 }
 
 model UserAdmin {
@@ -48,20 +48,20 @@ model Product {
   isAvailable  Boolean
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  productItem  ProductItem[]
+  ProductItem  ProductItem[]
   StockProduct StockProduct?
 }
 
 model ProductItem {
   id             String        @id @default(auto()) @map("_id") @db.ObjectId
-  product        Product       @relation(fields: [productId], references: [id])
+  Product        Product       @relation(fields: [productId], references: [id])
   productId      String        @db.ObjectId
   quantity       Int           @default(0)
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
-  shoppingCart   shoppingCart? @relation(fields: [shoppingCartId], references: [id])
+  ShoppingCart   shoppingCart? @relation(fields: [shoppingCartId], references: [id])
   shoppingCartId String?       @db.ObjectId
-  order          Order?        @relation(fields: [orderId], references: [id])
+  Order          Order?        @relation(fields: [orderId], references: [id])
   orderId        String?       @db.ObjectId
 }
 
@@ -69,16 +69,16 @@ model shoppingCart {
   id           String        @id @default(auto()) @map("_id") @db.ObjectId
   userClient   UserClient    @relation(fields: [userClientId], references: [id])
   userClientId String        @unique @db.ObjectId
-  productItem  ProductItem[]
+  ProductItem  ProductItem[]
   isAvailable  Boolean
   createdAt    DateTime      @default(now())
 }
 
 model Order {
   id           String        @id @default(auto()) @map("_id") @db.ObjectId
-  userClient   UserClient    @relation(fields: [userClientId], references: [id])
+  UserClient   UserClient    @relation(fields: [userClientId], references: [id])
   userClientId String        @db.ObjectId
-  productItem  ProductItem[]
+  ProductItem  ProductItem[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   totalPrice   Float         @default(0)
@@ -97,12 +97,14 @@ enum OrderStatus {
 model Stock {
   id           String         @id @default(auto()) @map("_id") @db.ObjectId
   createdAt    DateTime       @default(now())
-  stockProduct StockProduct[]
+  StockProduct StockProduct[]
+  description  String
+  slug         String         @unique
 }
 
 model StockProduct {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  stock     Stock    @relation(fields: [stockId], references: [id])
+  Stock     Stock    @relation(fields: [stockId], references: [id])
   stockId   String   @db.ObjectId
   quantity  Int      @default(0)
   createdAt DateTime @default(now())
