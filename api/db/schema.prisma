@@ -24,7 +24,7 @@ model UserClient {
   phoneNumber  String?
   user         User          @relation(fields: [userId], references: [id])
   userId       String        @unique @db.ObjectId
-  ShoppingCart shoppingCart?
+  ShoppingCart ShoppingCart?
   Order        Order[]
 }
 
@@ -59,13 +59,13 @@ model ProductItem {
   quantity       Int           @default(0)
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
-  ShoppingCart   shoppingCart? @relation(fields: [shoppingCartId], references: [id])
+  ShoppingCart   ShoppingCart? @relation(fields: [shoppingCartId], references: [id])
   shoppingCartId String?       @db.ObjectId
   Order          Order?        @relation(fields: [orderId], references: [id])
   orderId        String?       @db.ObjectId
 }
 
-model shoppingCart {
+model ShoppingCart {
   id           String        @id @default(auto()) @map("_id") @db.ObjectId
   userClient   UserClient    @relation(fields: [userClientId], references: [id])
   userClientId String        @unique @db.ObjectId

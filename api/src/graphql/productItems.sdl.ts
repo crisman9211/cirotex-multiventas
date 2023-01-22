@@ -6,7 +6,7 @@ export const schema = gql`
     quantity: Int!
     createdAt: DateTime!
     updatedAt: DateTime!
-    ShoppingCart: shoppingCart
+    ShoppingCart: ShoppingCart
     shoppingCartId: String
     Order: Order
     orderId: String
