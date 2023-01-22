@@ -7,8 +7,8 @@ export const standard = defineScenario<Prisma.UserClientCreateArgs>({
       data: {
         user: {
           create: {
-            uid: 'String1036983',
-            email: 'String89396',
+            uid: 'String6482286',
+            email: 'String7355003',
             name: 'String',
           },
         },
@@ -18,8 +18,8 @@ export const standard = defineScenario<Prisma.UserClientCreateArgs>({
       data: {
         user: {
           create: {
-            uid: 'String7684169',
-            email: 'String7362663',
+            uid: 'String2334804',
+            email: 'String6452941',
             name: 'String',
           },
         },

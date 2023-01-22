@@ -4,7 +4,7 @@ export const schema = gql`
     phoneNumber: String
     user: User!
     userId: String!
-    ShoppingCart: shoppingCart
+    ShoppingCart: ShoppingCart
     Order: [Order]!
   }
 
