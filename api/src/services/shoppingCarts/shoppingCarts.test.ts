@@ -1,4 +1,4 @@
-import type { shoppingCart } from '@prisma/client'
+import type { ShoppingCart } from '@prisma/client'
 
 import {
   shoppingCarts,
@@ -46,7 +46,7 @@ describe('shoppingCarts', () => {
   scenario('updates a shoppingCart', async (scenario: StandardScenario) => {
     const original = (await shoppingCart({
       id: scenario.shoppingCart.one.id,
-    })) as shoppingCart
+    })) as ShoppingCart
     const result = await updateShoppingCart({
       id: original.id,
       input: { isAvailable: false },
@@ -58,7 +58,7 @@ describe('shoppingCarts', () => {
   scenario('deletes a shoppingCart', async (scenario: StandardScenario) => {
     const original = (await deleteShoppingCart({
       id: scenario.shoppingCart.one.id,
-    })) as shoppingCart
+    })) as ShoppingCart
     const result = await shoppingCart({ id: original.id })
 
     expect(result).toEqual(null)

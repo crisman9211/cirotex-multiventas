@@ -1,7 +1,7 @@
-import type { Prisma, shoppingCart } from '@prisma/client'
+import type { Prisma, ShoppingCart } from '@prisma/client'
 import type { ScenarioData } from '@redwoodjs/testing/api'
 
-export const standard = defineScenario<Prisma.shoppingCartCreateArgs>({
+export const standard = defineScenario<Prisma.ShoppingCartCreateArgs>({
   shoppingCart: {
     one: {
       data: {
@@ -10,8 +10,8 @@ export const standard = defineScenario<Prisma.shoppingCartCreateArgs>({
           create: {
             user: {
               create: {
-                uid: 'String519975',
-                email: 'String4921461',
+                uid: 'String3334381',
+                email: 'String5165166',
                 name: 'String',
               },
             },
@@ -26,8 +26,8 @@ export const standard = defineScenario<Prisma.shoppingCartCreateArgs>({
           create: {
             user: {
               create: {
-                uid: 'String9192566',
-                email: 'String8278059',
+                uid: 'String4934350',
+                email: 'String3836265',
                 name: 'String',
               },
             },
@@ -38,4 +38,4 @@ export const standard = defineScenario<Prisma.shoppingCartCreateArgs>({
   },
 })
 
-export type StandardScenario = ScenarioData<shoppingCart, 'shoppingCart'>
+export type StandardScenario = ScenarioData<ShoppingCart, 'shoppingCart'>
