@@ -1,12 +1,18 @@
 import { createTheme } from '@mui/material/styles'
 
-export const theme = createTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#0576c1',
+      light: '#3791cd',
+      dark: '#035287',
+      contrastText: '#ffffff',
     },
     secondary: {
       main: '#ff9501',
+      light: '#ffaa33',
+      dark: '#b26800',
+      contrastText: 'rgba(0,0,0,0.87)',
     },
   },
   typography: {
@@ -48,3 +54,5 @@ export const theme = createTheme({
     borderRadius: 0,
   },
 })
+
+export default theme
