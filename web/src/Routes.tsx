@@ -14,6 +14,12 @@ import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 const Routes = () => {
   return (
     <Router>
+      <Set wrap={ScaffoldLayout} title="Products" titleTo="products" buttonLabel="New Product" buttonTo="newProduct">
+        <Route path="/products/new" page={ProductNewProductPage} name="newProduct" />
+        <Route path="/products/{id}/edit" page={ProductEditProductPage} name="editProduct" />
+        <Route path="/products/{id}" page={ProductProductPage} name="product" />
+        <Route path="/products" page={ProductProductsPage} name="products" />
+      </Set>
       <Set wrap={ScaffoldLayout} title="UserClients" titleTo="userClients" buttonLabel="New UserClient" buttonTo="newUserClient">
         <Route path="/user-clients/new" page={UserClientNewUserClientPage} name="newUserClient" />
         <Route path="/user-clients/{id}/edit" page={UserClientEditUserClientPage} name="editUserClient" />
