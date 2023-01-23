@@ -96,7 +96,7 @@ const AppBarClient = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profilxxxe</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   )
@@ -124,7 +124,7 @@ const AppBarClient = () => {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={66} color="secondary">
+          <Badge badgeContent={17} color="secondary">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>
