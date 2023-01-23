@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { styled, alpha } from '@mui/material/styles'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import { AppBarClientProps } from 'types/webTypes'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
-const AppBarClient = () => {
+const AppBarClient = ({ countProductsSelected = 0 }: AppBarClientProps) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null)
@@ -121,14 +122,14 @@ const AppBarClient = () => {
       <MenuItem>
         <IconButton
           size="large"
-          aria-label="show 17 new notifications"
+          aria-label={`show ${countProductsSelected} new notifications`}
           color="inherit"
         >
-          <Badge badgeContent={17} color="secondary">
+          <Badge badgeContent={countProductsSelected} color="secondary">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Productos cargados</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -179,10 +180,10 @@ const AppBarClient = () => {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
               size="large"
-              aria-label="show 17 items in cart"
+              aria-label={`show ${countProductsSelected} in cart`}
               color="inherit"
             >
-              <Badge badgeContent={19} color="secondary">
+              <Badge badgeContent={countProductsSelected} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
