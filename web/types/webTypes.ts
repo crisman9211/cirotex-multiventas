@@ -20,3 +20,7 @@ export interface AppBarProps extends navItemsProps {
    */
   window?: () => Window
 }
+
+export interface AppBarClientProps {
+  countProductsSelected: number
+}
