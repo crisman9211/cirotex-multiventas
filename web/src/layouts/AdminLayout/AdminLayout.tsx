@@ -58,10 +58,6 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
     },
   ]
   return (
-    // <>
-    //   <AppBarAdmin title={'BackOffice'} navItems={[]}>
-    //   </AppBarAdmin>
-    // </>
     <>
       <AppBarAdmin title={'BackOffice'} menuRoutes={menuRoutes}>
         <Box sx={{ p: '20px', display: 'flex' }}>

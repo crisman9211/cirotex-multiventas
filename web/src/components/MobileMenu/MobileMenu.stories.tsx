@@ -13,17 +13,30 @@
 
 import type { ComponentMeta } from '@storybook/react'
 
+import { routes } from '@redwoodjs/router'
+
 import MobileMenu from './MobileMenu'
 
-const navItems = [
-  { name: 'Home', path: '' },
-  { name: 'Users', path: '' },
-  { name: 'Posts', path: '' },
-  { name: 'Comments', path: '' },
+const menuRoutes = [
+  {
+    name: 'StockProducts',
+    model: 'StockProduct',
+    route: routes.stockProducts(),
+  },
+  {
+    name: 'Stocks',
+    model: 'Stock',
+    route: routes.stocks(),
+  },
+  {
+    name: 'Orders',
+    model: 'Order',
+    route: routes.orders(),
+  },
 ]
 
 export const generated = () => {
-  return <MobileMenu title={'BacOffice'} menuRoutes={navItems} />
+  return <MobileMenu title={'BacOffice'} menuRoutes={menuRoutes} />
 }
 
 export default {

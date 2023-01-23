@@ -13,20 +13,34 @@
 
 import { Typography } from '@mui/material'
 import type { ComponentMeta } from '@storybook/react'
+import { MenuRoutes } from 'types/webTypes'
+
+import { routes } from '@redwoodjs/router'
 
 import AppBarAdmin from './AppBarAdmin'
 
-const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Users', path: '/' },
-  { name: 'Posts', path: '/' },
-  { name: 'Comments', path: '/' },
+const menuRoutes: MenuRoutes[] = [
+  {
+    name: 'StockProducts',
+    model: 'StockProduct',
+    route: routes.stockProducts(),
+  },
+  {
+    name: 'Stocks',
+    model: 'Stock',
+    route: routes.stocks(),
+  },
+  {
+    name: 'Orders',
+    model: 'Order',
+    route: routes.orders(),
+  },
 ]
 const titleAppBar = 'BackOffice'
 
 export const generated = () => {
   return (
-    <AppBarAdmin menuRoutes={navItems} title={titleAppBar}>
+    <AppBarAdmin title={titleAppBar} menuRoutes={menuRoutes}>
       <Typography>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique unde
         fugit veniam eius, perspiciatis sunt? Corporis qui ducimus quibusdam,

@@ -13,10 +13,29 @@
 
 import type { ComponentMeta } from '@storybook/react'
 
+import { routes } from '@redwoodjs/router'
+
 import MenuAdmin from './MenuAdmin'
 
+const menuRoutes = [
+  {
+    name: 'StockProducts',
+    model: 'StockProduct',
+    route: routes.stockProducts(),
+  },
+  {
+    name: 'Stocks',
+    model: 'Stock',
+    route: routes.stocks(),
+  },
+  {
+    name: 'Orders',
+    model: 'Order',
+    route: routes.orders(),
+  },
+]
 export const generated = () => {
-  return <MenuAdmin />
+  return <MenuAdmin menuRoutes={menuRoutes} />
 }
 
 export default {
