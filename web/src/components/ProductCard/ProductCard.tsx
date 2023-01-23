@@ -3,17 +3,7 @@ import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-
-export interface ProductCardProps {
-  name: string
-  price: number
-  description: string
-  imgURL: string
-  /**
-   * Count of items in stock
-   */
-  stock: number
-}
+import { ProductCardProps } from 'types/webTypes'
 
 const ProductCard = ({
   name,

@@ -24,3 +24,14 @@ export interface AppBarProps extends navItemsProps {
 export interface AppBarClientProps {
   countProductsSelected: number
 }
+
+export interface ProductCardProps {
+  name: string
+  price: number
+  description: string
+  imgURL: string
+  /**
+   * Count of items in stock
+   */
+  stock: number
+}
