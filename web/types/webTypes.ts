@@ -1,10 +1,15 @@
-export interface navItemsInterface {
+export interface MenuRoutes {
   name: string
-  path: string
+  model: string
+  route: string
 }
+export interface MenuAdminProps {
+  menuRoutes: MenuRoutes[]
+}
+
 export interface navItemsProps {
   title: string
-  navItems: navItemsInterface[]
+  menuRoutes: MenuRoutes[]
   color?: string
 }
 export interface AppBarProps extends navItemsProps {

@@ -23,7 +23,7 @@ const navItems = [
 ]
 
 export const generated = () => {
-  return <MobileMenu title={'BacOffice'} navItems={navItems} />
+  return <MobileMenu title={'BacOffice'} menuRoutes={navItems} />
 }
 
 export default {

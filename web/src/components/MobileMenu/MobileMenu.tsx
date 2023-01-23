@@ -8,9 +8,10 @@ import {
 } from '@mui/material'
 import { navItemsProps } from 'types/webTypes'
 
+import { NavLink, routes } from '@redwoodjs/router'
+
 const MobileMenu = (props: navItemsProps) => {
-  const { title, navItems } = props
-  const nameItems = navItems.map((item) => item.name)
+  const { title, menuRoutes: navItems } = props
   return (
     <>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -18,10 +19,12 @@ const MobileMenu = (props: navItemsProps) => {
       </Typography>
       <Divider />
       <List>
-        {nameItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map((item) => (
+          <ListItem key={item.name} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <NavLink to={item.route} activeClassName="activeLink">
+                {item.name}
+              </NavLink>{' '}
             </ListItemButton>
           </ListItem>
         ))}

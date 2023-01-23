@@ -1,6 +1,9 @@
 /*
   normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 */
+.MuiBox-root.css-k008qs{
+  flex-direction: column;
+}
 
 .rw-scaffold *,
 .rw-scaffold ::after,
@@ -185,19 +188,20 @@
   line-height: inherit;
 }
 .rw-button.rw-button-green {
-  background-color: #48bb78;
+  background-color: #ff9501;
   color: #fff;
 }
+
 .rw-button.rw-button-green:hover {
-  background-color: #38a169;
+  background-color: #b26800;
   color: #fff;
 }
 .rw-button.rw-button-blue {
-  background-color: #3182ce;
+  background-color: #0576c1;
   color: #fff;
 }
 .rw-button.rw-button-blue:hover {
-  background-color: #2b6cb0;
+  background-color: #035287;
 }
 .rw-button.rw-button-red {
   background-color: #e53e3e;

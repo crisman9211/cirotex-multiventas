@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { AccountCircle } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { Typography } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
@@ -9,13 +10,12 @@ import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import { AppBarProps } from 'types/webTypes'
 
-import DesktopMenu from '../DesktopMenu/DesktopMenu'
 import MobileMenu from '../MobileMenu/MobileMenu'
 
 const drawerWidth = 240
 
 const AppBarAdmin = (props: AppBarProps) => {
-  const { window, title: titleAppBar, navItems } = props
+  const { window, title, menuRoutes: navItems } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState)
@@ -23,7 +23,7 @@ const AppBarAdmin = (props: AppBarProps) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <MobileMenu title={titleAppBar} navItems={navItems} />
+      <MobileMenu title={title} menuRoutes={navItems} />
     </Box>
   )
 
@@ -43,7 +43,13 @@ const AppBarAdmin = (props: AppBarProps) => {
           >
             <MenuIcon />
           </IconButton>
-          <DesktopMenu title={titleAppBar} navItems={navItems} />
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 6, display: { xs: 'none', sm: 'block' } }}
+          >
+            {title}
+          </Typography>
           <IconButton
             size="large"
             aria-label="account of current user"
