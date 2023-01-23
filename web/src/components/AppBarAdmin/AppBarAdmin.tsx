@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { AccountCircle } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Typography } from '@mui/material'
