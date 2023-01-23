@@ -26,7 +26,7 @@ const titleAppBar = 'BackOffice'
 
 export const generated = () => {
   return (
-    <AppBarAdmin navItems={navItems} title={titleAppBar}>
+    <AppBarAdmin menuRoutes={navItems} title={titleAppBar}>
       <Typography>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique unde
         fugit veniam eius, perspiciatis sunt? Corporis qui ducimus quibusdam,

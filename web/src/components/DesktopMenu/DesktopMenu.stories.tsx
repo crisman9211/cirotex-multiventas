@@ -23,7 +23,7 @@ const navItems = [
 ]
 
 export const generated = () => {
-  return <DesktopMenu title={'BackOffice'} navItems={navItems} color="#000" />
+  return <DesktopMenu title={'BackOffice'} menuRoutes={navItems} color="#000" />
 }
 
 export default {

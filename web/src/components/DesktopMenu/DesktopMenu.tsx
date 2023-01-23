@@ -2,7 +2,7 @@ import { Typography, Box, Button } from '@mui/material'
 import { navItemsProps } from 'types/webTypes'
 
 const DesktopMenu = (props: navItemsProps) => {
-  const { title, navItems, color } = props
+  const { title, menuRoutes: navItems, color } = props
   const nameItems = navItems.map((item) => item.name)
   return (
     <>
