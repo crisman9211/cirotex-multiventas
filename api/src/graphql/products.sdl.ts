@@ -12,9 +12,19 @@ export const schema = gql`
     StockProduct: StockProduct
   }
 
+  type ListProduct {
+    id: String!
+    name: String!
+    description: String!
+    price: Float!
+    stock: Int!
+    imgURL: String!
+  }
+
   type Query {
     products: [Product!]! @requireAuth
     product(id: String!): Product @requireAuth
+    listProducts: [ListProduct!]! @requireAuth
   }
 
   input CreateProductInput {

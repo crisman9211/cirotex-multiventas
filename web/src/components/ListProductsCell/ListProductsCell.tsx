@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
-import type { ListProductsQuery } from 'types/graphql'
-import { ProductCardProps } from 'types/webTypes'
+import type { ListProduct, ListProductsQuery } from 'types/graphql'
 
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
@@ -13,6 +12,7 @@ export const QUERY = gql`
       name
       description
       price
+      imgURL
       stock
     }
   }
@@ -36,7 +36,7 @@ export const Success = ({
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {listProducts.map((product: ProductCardProps, index: React.Key) => (
+        {listProducts.map((product: ListProduct, index: React.Key) => (
           <Grid item xs={4} sm={4} md={3} key={index}>
             <ProductCard
               name={product.name}

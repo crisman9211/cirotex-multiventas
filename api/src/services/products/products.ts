@@ -6,6 +6,9 @@ import type {
 
 import { db } from 'src/lib/db'
 
+import { stockProduct } from '../stockProducts/stockProducts'
+import { stock } from '../stocks/stocks'
+
 export const products: QueryResolvers['products'] = () => {
   return db.product.findMany()
 }
@@ -38,6 +41,25 @@ export const deleteProduct: MutationResolvers['deleteProduct'] = ({ id }) => {
   return db.product.delete({
     where: { id },
   })
+}
+
+export const listProducts: QueryResolvers['ListProducts'] = async () => {
+  const stockProduct = await db.stockProduct.findMany({
+    include: {
+      Product: true,
+    },
+  })
+  const listProducts = stockProduct.map((stockProduct) => {
+    return {
+      id: stockProduct.Product.id,
+      name: stockProduct.Product.name,
+      description: stockProduct.Product.description,
+      price: stockProduct.Product.price,
+      stock: stockProduct.quantity,
+      imgURL: stockProduct.Product.imgURL,
+    }
+  })
+  return listProducts
 }
 
 export const Product: ProductRelationResolvers = {
