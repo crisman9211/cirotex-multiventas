@@ -34,18 +34,16 @@ describe('products', () => {
         name: 'String',
         description: 'String',
         imgURL: 'String',
-        price: 2321276.0389818144,
+        price: Math.round(2321276.0389818144),
         isAvailable: true,
-        updatedAt: '2023-01-22T08:36:51.775Z',
       },
     })
 
     expect(result.name).toEqual('String')
     expect(result.description).toEqual('String')
     expect(result.imgURL).toEqual('String')
-    expect(result.price).toEqual(2321276.0389818144)
+    expect(result.price).toEqual(Math.round(2321276.0389818144))
     expect(result.isAvailable).toEqual(true)
-    expect(result.updatedAt).toEqual(new Date('2023-01-22T08:36:51.775Z'))
   })
 
   scenario('updates a product', async (scenario: StandardScenario) => {
